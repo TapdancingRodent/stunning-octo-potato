@@ -1,0 +1,12 @@
+name: Test log output when setting permissions
+
+on: [pull_request]
+
+jobs:
+  test_pipeline_permissions:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
